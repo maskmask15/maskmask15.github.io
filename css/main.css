@@ -33,6 +33,27 @@
 :root {
   --gap-max: calc(var(--gap-margin) + var(--gap-padding));
 }
+body {
+  font-family: "LXGW WenKai Screen", system-ui, "Microsoft Yahei", "Segoe UI", -apple-system, Roboto, Ubuntu, "Helvetica Neue", Arial, "WenQuanYi Micro Hei", sans-serif;
+  font-size: var(--fsp);
+}
+h1 {
+  font-size: var(--fsh2);
+}
+h2 {
+  font-size: var(--fsh2);
+}
+h3 {
+  font-size: var(--fsh3);
+}
+h4 {
+  font-size: var(--fsh4);
+}
+code,
+pre {
+  font-family: Menlo, Monaco, Consolas, system-ui, "Courier New", monospace, sans-serif;
+  font-size: 0.8125rem;
+}
 :root {
   --hue: 192deg;
   --sat: 98%;
