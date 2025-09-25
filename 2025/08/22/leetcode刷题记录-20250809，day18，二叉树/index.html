@@ -6,7 +6,7 @@
   <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.32.4" theme-name="Stellar" theme-version="1.32.4">
   
   
-  <meta name="generator" content="Hexo 7.1.0">
+  <meta name="generator" content="Hexo 7.3.0">
   <meta http-equiv='x-dns-prefetch-control' content='on' />
   <link rel="preconnect" href="https://gcore.jsdelivr.net" crossorigin><link rel="preconnect" href="https://unpkg.com" crossorigin><link rel="preconnect" href="https://cdn.bootcdn.net" crossorigin>
   <meta name="renderer" content="webkit">
@@ -27,16 +27,16 @@
 <meta property="og:site_name" content="LuYh">
 <meta property="og:description" content="LeetCode 刷题记录 - 2025-08-09今天刷题总结如下：  题目 1: LeetCode 530.二叉搜索树的最小绝对差 题目描述：给你一个二叉搜索树的根节点 root ，返回 树中任意两不同节点值之间的最小差值 。 差值是一个正数，其数值等于两值之差的绝对值。难度: Easy   思路二叉树题目一般考虑递归。对于递归，1、确定递归函数的参数和返回值；2、确定终止条件；3、确定单层递">
 <meta property="og:locale">
-<meta property="og:image" content="https://maskmask15.github.io/assets/LuYh/avatar/avatar.jpg">
+<meta property="og:image" content="https://maskmask15.github.io/assets/LuYh/avatar/LYuh_icon.jpg">
 <meta property="article:published_time" content="2025-08-22T06:36:50.000Z">
-<meta property="article:modified_time" content="2025-08-22T09:52:57.944Z">
+<meta property="article:modified_time" content="2025-08-26T06:24:36.392Z">
 <meta property="article:author" content="LuYhhhhh">
 <meta property="article:tag" content="刷题">
 <meta property="article:tag" content="数据结构">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="二叉树">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://maskmask15.github.io/assets/LuYh/avatar/avatar.jpg">
+<meta name="twitter:image" content="https://maskmask15.github.io/assets/LuYh/avatar/LYuh_icon.jpg">
   
   
   
@@ -52,15 +52,35 @@
 
   
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"LuYhhhhh","sameAs":[],"image":"/assets/LuYh/avatar/avatar.jpg"},"dateCreated":"2025-08-22T14:36:50+08:00","dateModified":"2025-08-22T17:52:57+08:00","datePublished":"2025-08-22T14:36:50+08:00","description":"","headline":"leetcode刷题记录-20250809，day18，二叉树","mainEntityOfPage":{"@type":"WebPage","@id":"https://maskmask15.github.io/2025/08/22/leetcode%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95-20250809%EF%BC%8Cday18%EF%BC%8C%E4%BA%8C%E5%8F%89%E6%A0%91/"},"publisher":{"@type":"Organization","name":"LuYhhhhh","sameAs":[],"image":"/assets/LuYh/avatar/avatar.jpg","logo":{"@type":"ImageObject","url":"/assets/LuYh/avatar/avatar.jpg"}},"url":"https://maskmask15.github.io/2025/08/22/leetcode%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95-20250809%EF%BC%8Cday18%EF%BC%8C%E4%BA%8C%E5%8F%89%E6%A0%91/","keywords":"刷题, 数据结构, 算法, 二叉树","image":[]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"LuYhhhhh","sameAs":[],"image":"/assets/LuYh/avatar/LYuh_icon.jpg"},"dateCreated":"2025-08-22T14:36:50+08:00","dateModified":"2025-08-26T14:24:36+08:00","datePublished":"2025-08-22T14:36:50+08:00","description":"","headline":"leetcode刷题记录-20250809，day18，二叉树","mainEntityOfPage":{"@type":"WebPage","@id":"https://maskmask15.github.io/2025/08/22/leetcode%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95-20250809%EF%BC%8Cday18%EF%BC%8C%E4%BA%8C%E5%8F%89%E6%A0%91/"},"publisher":{"@type":"Organization","name":"LuYhhhhh","sameAs":[],"image":"/assets/LuYh/avatar/LYuh_icon.jpg","logo":{"@type":"ImageObject","url":"/assets/LuYh/avatar/LYuh_icon.jpg"}},"url":"https://maskmask15.github.io/2025/08/22/leetcode%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95-20250809%EF%BC%8Cday18%EF%BC%8C%E4%BA%8C%E5%8F%89%E6%A0%91/","keywords":"刷题, 数据结构, 算法, 二叉树","image":[]}</script>
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/xaoxuu/favicon/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/xaoxuu/favicon/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/xaoxuu/favicon/favicon-16x16.png"><link rel="manifest" href="/assets/xaoxuu/favicon/site.webmanifest"><link rel="shortcut icon" href="/assets/xaoxuu/favicon/favicon.ico"><meta name="theme-color" content="#f8f8f8"><link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/lxgw-wenkai-screen-webfont/1.7.0/style.min.css" media="all" />
+  
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(','\\)']],
+        displayMath: [['$$','$$']]
+      },
+      chtml: {
+        scale: 1.5
+      }
+    };
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script" async></script>
+    
+    <style>
+    .MathJax_Display { font-size: 1.5em; }
+    .MathJax { font-size: 1.2em; }
+    </style>
+    
 </head>
 <body>
 
 <div class="l_body content" id="start" layout="post" type="tech" ><aside class="l_left"><div class="sidebg"></div><div class="leftbar-container">
 
 
-<header class="header"><div class="logo-wrap"><div class="icon"><img no-lazy class="icon" src="/assets/icon.svg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></div><a class="title" href="/"><div class="main">LuYh</div><div class="sub normal cap">顶峰相见</div><div class="sub hover cap" style="opacity:0"> Designed by LuYhhhhh</div></a></div></header>
+<header class="header"><div class="logo-wrap"><div class="icon"><img no-lazy class="icon" src="/assets/LYuh_icon.jpg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></div><a class="title" href="/"><div class="main">LuYh</div><div class="sub normal cap">顶峰相见</div><div class="sub hover cap" style="opacity:0"> Designed by LuYhhhhh</div></a></div></header>
 
 <div class="nav-area">
 
@@ -71,7 +91,7 @@
 
 
 
-<widget class="widget-wrapper recent post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/2025/08/25/Versal-ACAP%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"><span class="title">Versal ACAP学习记录</span></a><a class="item title" href="/2025/08/22/AI%20Sys%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%9501/"><span class="title">AI Sys学习记录 --- AI 计算体系概述</span></a><a class="item title" href="/2025/08/21/leetcode%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95-20250808%EF%BC%8Cday17%EF%BC%8C%E4%BA%8C%E5%8F%89%E6%A0%91/"><span class="title">leetcode刷题记录-20250808，day17，二叉树</span></a><a class="item title" href="/2025/08/21/RK3588-%E5%B9%B3%E5%8F%B0-YOLO11-Seg-%E9%83%A8%E7%BD%B2%E4%B8%8E%E4%BC%98%E5%8C%96/"><span class="title">RK3588 平台部署 YOLO11-Seg</span></a><a class="item title" href="/2025/08/22/leetcode%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95-20250809%EF%BC%8Cday18%EF%BC%8C%E4%BA%8C%E5%8F%89%E6%A0%91/"><span class="title">leetcode刷题记录-20250809，day18，二叉树</span></a></div></widget>
+<widget class="widget-wrapper recent post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/2025/09/25/AI%E7%BC%96%E8%AF%91%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%9501/"><span class="title">AI编译器学习记录 01</span></a><a class="item title" href="/2025/09/24/LLVM%E5%AD%A6%E4%B9%A002/"><span class="title">LLVM 学习记录 0x</span></a><a class="item title" href="/2025/09/24/LLVM%E5%AD%A6%E4%B9%A001/"><span class="title">LLVM 学习记录 0x</span></a><a class="item title" href="/2025/08/21/RK3588-%E5%B9%B3%E5%8F%B0-YOLO11-Seg-%E9%83%A8%E7%BD%B2%E4%B8%8E%E4%BC%98%E5%8C%96/"><span class="title">RK3588 平台部署 YOLO11-Seg</span></a><a class="item title" href="/2025/08/22/AI%20Sys%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%9501/"><span class="title">AI Sys学习记录 --- AI 计算体系概述</span></a><a class="item title" href="/2025/08/26/leetcode%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95-20250811%EF%BC%8Cday20%EF%BC%8C%E4%BA%8C%E5%8F%89%E6%A0%91/"><span class="title">leetcode刷题记录-20250811，day20，二叉树</span></a><a class="item title" href="/2025/08/21/leetcode%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95-20250808%EF%BC%8Cday17%EF%BC%8C%E4%BA%8C%E5%8F%89%E6%A0%91/"><span class="title">leetcode刷题记录-20250808，day17，二叉树</span></a><a class="item title" href="/2025/08/22/leetcode%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95-20250809%EF%BC%8Cday18%EF%BC%8C%E4%BA%8C%E5%8F%89%E6%A0%91/"><span class="title">leetcode刷题记录-20250809，day18，二叉树</span></a><a class="item title" href="/2025/08/25/Versal-ACAP%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"><span class="title">Versal ACAP学习记录</span></a></div></widget>
 </div>
 
 </div></aside><div class="l_main" id="main">
@@ -84,7 +104,7 @@
   <div class="content">
     <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
 <span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/LeetCode/">LeetCode</a></div>
-<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2025-08-22T06:36:50.000Z">2025-08-22</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2025-08-22T09:52:57.944Z">2025-08-22</time></span></div></div></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2025-08-22T06:36:50.000Z">2025-08-22</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2025-08-26T06:24:36.392Z">2025-08-26</time></span></div></div></div>
     
     <div class="bottom only-title">
       
