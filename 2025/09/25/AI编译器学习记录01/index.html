@@ -1,5 +1,5 @@
 
-<!DOCTYPE html><html lang="zh">
+<!DOCTYPE html><html lang="zh-CN">
 
 <head>
   <meta charset="utf-8">
@@ -26,10 +26,10 @@
 <meta property="og:url" content="https://maskmask15.github.io/2025/09/25/AI%E7%BC%96%E8%AF%91%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%9501/">
 <meta property="og:site_name" content="LuYh">
 <meta property="og:description" content="AI编译器学习记录 01">
-<meta property="og:locale">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://maskmask15.github.io/assets/LuYh/avatar/LYuh_icon.jpg">
 <meta property="article:published_time" content="2025-09-25T07:27:16.000Z">
-<meta property="article:modified_time" content="2025-09-27T09:44:08.935Z">
+<meta property="article:modified_time" content="2025-09-28T11:32:39.667Z">
 <meta property="article:author" content="LuYhhhhh">
 <meta property="article:tag" content="AI Sys">
 <meta property="article:tag" content="编译器">
@@ -50,7 +50,7 @@
 
   
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"LuYhhhhh","sameAs":[],"image":"/assets/LuYh/avatar/LYuh_icon.jpg"},"dateCreated":"2025-09-25T15:27:16+08:00","dateModified":"2025-09-27T17:44:08+08:00","datePublished":"2025-09-25T15:27:16+08:00","description":"","headline":"AI编译器学习记录 01","mainEntityOfPage":{"@type":"WebPage","@id":"https://maskmask15.github.io/2025/09/25/AI%E7%BC%96%E8%AF%91%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%9501/"},"publisher":{"@type":"Organization","name":"LuYhhhhh","sameAs":[],"image":"/assets/LuYh/avatar/LYuh_icon.jpg","logo":{"@type":"ImageObject","url":"/assets/LuYh/avatar/LYuh_icon.jpg"}},"url":"https://maskmask15.github.io/2025/09/25/AI%E7%BC%96%E8%AF%91%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%9501/","keywords":"AI Sys, 编译器","image":[]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"LuYhhhhh","sameAs":[],"image":"/assets/LuYh/avatar/LYuh_icon.jpg"},"dateCreated":"2025-09-25T15:27:16+08:00","dateModified":"2025-09-28T19:32:39+08:00","datePublished":"2025-09-25T15:27:16+08:00","description":"","headline":"AI编译器学习记录 01","mainEntityOfPage":{"@type":"WebPage","@id":"https://maskmask15.github.io/2025/09/25/AI%E7%BC%96%E8%AF%91%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%9501/"},"publisher":{"@type":"Organization","name":"LuYhhhhh","sameAs":[],"image":"/assets/LuYh/avatar/LYuh_icon.jpg","logo":{"@type":"ImageObject","url":"/assets/LuYh/avatar/LYuh_icon.jpg"}},"url":"https://maskmask15.github.io/2025/09/25/AI%E7%BC%96%E8%AF%91%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%9501/","keywords":"AI Sys, 编译器","image":[]}</script>
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/xaoxuu/favicon/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/xaoxuu/favicon/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/xaoxuu/favicon/favicon-16x16.png"><link rel="manifest" href="/assets/xaoxuu/favicon/site.webmanifest"><link rel="shortcut icon" href="/assets/xaoxuu/favicon/favicon.ico"><meta name="theme-color" content="#f8f8f8"><link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/lxgw-wenkai-screen-webfont/1.7.0/style.min.css" media="all" />
 
   <script>
@@ -104,11 +104,11 @@
 <nav class="menu dis-select"><a class="nav-item active" title="博客" href="/" style="color:#1BCDFC"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M5.879 2.879C5 3.757 5 5.172 5 8v8c0 2.828 0 4.243.879 5.121C6.757 22 8.172 22 11 22h2c2.828 0 4.243 0 5.121-.879C19 20.243 19 18.828 19 16V8c0-2.828 0-4.243-.879-5.121C17.243 2 15.828 2 13 2h-2c-2.828 0-4.243 0-5.121.879M8.25 17a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 0 1.5H9a.75.75 0 0 1-.75-.75M9 12.25a.75.75 0 0 0 0 1.5h6a.75.75 0 0 0 0-1.5zM8.25 9A.75.75 0 0 1 9 8.25h6a.75.75 0 0 1 0 1.5H9A.75.75 0 0 1 8.25 9" clip-rule="evenodd"/><path fill="currentColor" d="M5.235 4.058C5 4.941 5 6.177 5 8v8c0 1.823 0 3.058.235 3.942L5 19.924c-.975-.096-1.631-.313-2.121-.803C2 18.243 2 16.828 2 14v-4c0-2.829 0-4.243.879-5.121c.49-.49 1.146-.707 2.121-.803zm13.53 15.884C19 19.058 19 17.822 19 16V8c0-1.823 0-3.059-.235-3.942l.235.018c.975.096 1.631.313 2.121.803C22 5.757 22 7.17 22 9.999v4c0 2.83 0 4.243-.879 5.122c-.49.49-1.146.707-2.121.803z" opacity=".5"/></svg></a><a class="nav-item" title="专栏" href="/topic/" style="color:#3DC550"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M14.25 4.48v3.057c0 .111 0 .27.02.406a.936.936 0 0 0 .445.683a.96.96 0 0 0 .783.072c.13-.04.272-.108.378-.159L17 8.005l1.124.534c.106.05.248.119.378.16a.958.958 0 0 0 .783-.073a.936.936 0 0 0 .444-.683c.021-.136.021-.295.021-.406V3.031c.113-.005.224-.01.332-.013C21.154 2.98 22 3.86 22 4.933v11.21c0 1.112-.906 2.01-2.015 2.08c-.97.06-2.108.179-2.985.41c-1.082.286-1.99 1.068-3.373 1.436c-.626.167-1.324.257-1.627.323V5.174c.32-.079 1.382-.203 1.674-.371c.184-.107.377-.216.576-.323m5.478 8.338a.75.75 0 0 1-.546.91l-4 1a.75.75 0 0 1-.364-1.456l4-1a.75.75 0 0 1 .91.546" clip-rule="evenodd"/><path fill="currentColor" d="M18.25 3.151c-.62.073-1.23.18-1.75.336a8.2 8.2 0 0 0-.75.27v3.182l.75-.356l.008-.005a1.13 1.13 0 0 1 .492-.13c.047 0 .094.004.138.01c.175.029.315.1.354.12l.009.005l.749.356V3.647z"/><path fill="currentColor" d="M12 5.214c-.334-.064-1.057-.161-1.718-.339C8.938 4.515 8.05 3.765 7 3.487c-.887-.234-2.041-.352-3.018-.412C2.886 3.007 2 3.9 2 4.998v11.146c0 1.11.906 2.01 2.015 2.079c.97.06 2.108.179 2.985.41c.486.129 1.216.431 1.873.726c1.005.451 2.052.797 3.127 1.034z" opacity=".5"/><path fill="currentColor" d="M4.273 12.818a.75.75 0 0 1 .91-.545l4 1a.75.75 0 1 1-.365 1.455l-4-1a.75.75 0 0 1-.545-.91m.909-4.545a.75.75 0 1 0-.364 1.455l4 1a.75.75 0 0 0 .364-1.455z"/></svg></a><a class="nav-item" title="探索" href="/explore/" style="color:#FA6400"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M20 12a8 8 0 1 1-16 0a8 8 0 0 1 16 0" opacity=".5"/><path fill="currentColor" d="M17.712 5.453c1.047-.193 2.006-.259 2.797-.152c.77.103 1.536.393 1.956 1.064c.446.714.312 1.542-.012 2.258c-.33.728-.918 1.499-1.672 2.268c-1.516 1.547-3.836 3.226-6.597 4.697c-2.763 1.472-5.495 2.484-7.694 2.92c-1.095.217-2.098.299-2.923.201c-.8-.095-1.6-.383-2.032-1.075c-.47-.752-.296-1.63.07-2.379c.375-.768 1.032-1.586 1.872-2.403L4 12.416c0 .219.083.71.168 1.146c.045.23.09.444.123.596c-.652.666-1.098 1.263-1.339 1.756c-.277.567-.208.825-.145.925c.072.116.305.305.937.38c.609.073 1.44.018 2.455-.183c2.02-.4 4.613-1.351 7.28-2.772c2.667-1.42 4.85-3.015 6.23-4.423c.694-.707 1.15-1.334 1.377-1.836c.233-.515.167-.75.107-.844c-.07-.112-.289-.294-.883-.374c-.542-.072-1.272-.041-2.163.112L16.87 5.656c.338-.101.658-.17.842-.203"/></svg></a><a class="nav-item" title="社交" href="/friends/" style="color:#F44336"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="m13.629 20.472l-.542.916c-.483.816-1.69.816-2.174 0l-.542-.916c-.42-.71-.63-1.066-.968-1.262c-.338-.197-.763-.204-1.613-.219c-1.256-.021-2.043-.098-2.703-.372a5 5 0 0 1-2.706-2.706C2 14.995 2 13.83 2 11.5v-1c0-3.273 0-4.91.737-6.112a5 5 0 0 1 1.65-1.651C5.59 2 7.228 2 10.5 2h3c3.273 0 4.91 0 6.113.737a5 5 0 0 1 1.65 1.65C22 5.59 22 7.228 22 10.5v1c0 2.33 0 3.495-.38 4.413a5 5 0 0 1-2.707 2.706c-.66.274-1.447.35-2.703.372c-.85.015-1.275.022-1.613.219c-.338.196-.548.551-.968 1.262" opacity=".5"/><path fill="currentColor" d="M10.99 14.308c-1.327-.978-3.49-2.84-3.49-4.593c0-2.677 2.475-3.677 4.5-1.609c2.025-2.068 4.5-1.068 4.5 1.609c0 1.752-2.163 3.615-3.49 4.593c-.454.335-.681.502-1.01.502c-.329 0-.556-.167-1.01-.502"/></svg></a></nav>
 </div>
 <div class="widgets">
-<div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" placeholder="Search"></form><div id="search-result"></div><div class="search-no-result">No Results!</div></div>
+<div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" placeholder="站内搜索"></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div>
 
 
 
-<widget class="widget-wrapper recent post-list"><div class="widget-header dis-select"><span class="name">Recent Update</span></div><div class="widget-body fs14"><a class="item title" href="/2025/09/25/AI%E7%BC%96%E8%AF%91%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%9501/"><span class="title">AI编译器学习记录 01</span></a><a class="item title" href="/2025/09/24/LLVM%E5%AD%A6%E4%B9%A002/"><span class="title">LLVM 学习记录 0x</span></a><a class="item title" href="/2025/09/24/LLVM%E5%AD%A6%E4%B9%A001/"><span class="title">LLVM 学习记录 0x</span></a><a class="item title" href="/2025/08/21/RK3588-%E5%B9%B3%E5%8F%B0-YOLO11-Seg-%E9%83%A8%E7%BD%B2%E4%B8%8E%E4%BC%98%E5%8C%96/"><span class="title">RK3588 平台部署 YOLO11-Seg</span></a><a class="item title" href="/2025/08/22/AI%20Sys%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%9501/"><span class="title">AI Sys学习记录 --- AI 计算体系概述</span></a><a class="item title" href="/2025/08/26/leetcode%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95-20250811%EF%BC%8Cday20%EF%BC%8C%E4%BA%8C%E5%8F%89%E6%A0%91/"><span class="title">leetcode刷题记录-20250811，day20，二叉树</span></a><a class="item title" href="/2025/08/21/leetcode%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95-20250808%EF%BC%8Cday17%EF%BC%8C%E4%BA%8C%E5%8F%89%E6%A0%91/"><span class="title">leetcode刷题记录-20250808，day17，二叉树</span></a><a class="item title" href="/2025/08/22/leetcode%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95-20250809%EF%BC%8Cday18%EF%BC%8C%E4%BA%8C%E5%8F%89%E6%A0%91/"><span class="title">leetcode刷题记录-20250809，day18，二叉树</span></a><a class="item title" href="/2025/08/25/Versal-ACAP%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"><span class="title">Versal ACAP学习记录</span></a></div></widget>
+<widget class="widget-wrapper recent post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/2025/09/25/AI%E7%BC%96%E8%AF%91%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%9501/"><span class="title">AI编译器学习记录 01</span></a><a class="item title" href="/2025/09/24/LLVM%E5%AD%A6%E4%B9%A002/"><span class="title">LLVM 学习记录 0x</span></a><a class="item title" href="/2025/09/24/LLVM%E5%AD%A6%E4%B9%A001/"><span class="title">LLVM 学习记录 0x</span></a><a class="item title" href="/2025/08/21/RK3588-%E5%B9%B3%E5%8F%B0-YOLO11-Seg-%E9%83%A8%E7%BD%B2%E4%B8%8E%E4%BC%98%E5%8C%96/"><span class="title">RK3588 平台部署 YOLO11-Seg</span></a><a class="item title" href="/2025/08/22/AI%20Sys%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%9501/"><span class="title">AI Sys学习记录 --- AI 计算体系概述</span></a><a class="item title" href="/2025/08/26/leetcode%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95-20250811%EF%BC%8Cday20%EF%BC%8C%E4%BA%8C%E5%8F%89%E6%A0%91/"><span class="title">leetcode刷题记录-20250811，day20，二叉树</span></a><a class="item title" href="/2025/08/21/leetcode%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95-20250808%EF%BC%8Cday17%EF%BC%8C%E4%BA%8C%E5%8F%89%E6%A0%91/"><span class="title">leetcode刷题记录-20250808，day17，二叉树</span></a><a class="item title" href="/2025/08/22/leetcode%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95-20250809%EF%BC%8Cday18%EF%BC%8C%E4%BA%8C%E5%8F%89%E6%A0%91/"><span class="title">leetcode刷题记录-20250809，day18，二叉树</span></a><a class="item title" href="/2025/08/25/Versal-ACAP%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"><span class="title">Versal ACAP学习记录</span></a></div></widget>
 </div>
 
 </div></aside><div class="l_main" id="main">
@@ -119,9 +119,9 @@
 
 <div class="article banner top">
   <div class="content">
-    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">Home</a>
-<span class="sep"></span><a class="cap breadcrumb" href="/">Blog</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/AI-Sys/">AI Sys</a></div>
-<div class="flex-row" id="post-meta"><span class="text created">Posted on: <time datetime="2025-09-25T07:27:16.000Z">2025-09-25</time></span><span class="sep updated"></span><span class="text updated">Updated on: <time datetime="2025-09-27T09:44:08.935Z">2025-09-27</time></span></div></div></div>
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
+<span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/AI-Sys/">AI Sys</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2025-09-25T07:27:16.000Z">2025-09-25</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2025-09-28T11:32:39.667Z">2025-09-28</time></span></div></div></div>
     
     <div class="bottom only-title">
       
@@ -152,15 +152,17 @@
 <li>High-level IR：用于表示计算图，表示神经网络。主要是为了解决传统编译器中难以表达深度学习模型中复杂运算这一问题，为了实现更高效的优化所以新设计了一套IR。比如TVM中的Relay IR。</li>
 <li>Low-level IR：类似于传统编译器，能够在更细粒度的层面（比如代码、指令集层面）上表示模型，从而能够针对与硬件进行优化。比如TVM中的TIR。</li>
 </ul>
-<h1 id="前端优化"><a href="#前端优化" class="headerlink" title="前端优化"></a>前端优化</h1><p>构造计算图，前端进行图级的优化。图提供了计算全局概述，所以容易在图级发现和执行许多优化，且与硬件无关，这意味着任何后端目标都可应用计算图优化。</p>
+<h1 id="前后端优化区别"><a href="#前后端优化区别" class="headerlink" title="前后端优化区别"></a>前后端优化区别</h1><ul>
+<li>前端优化：输入计算图，更关注计算图整体拓扑结构，而不关心算子的具体实现。在AI编译器的前端优化中，对算子节点进行融合、消除、化简等操作，使得计算图计算和存储开销最小。</li>
+<li>后端优化：输入是低级IR，关注算子节点的内部具体实现，针对具体实现使性能达最优。重点关注节点的输入、输出、内存循环方式和计算逻辑。</li>
+</ul>
+<h1 id="前端优化"><a href="#前端优化" class="headerlink" title="前端优化"></a>前端优化</h1><p>构造计算图，前端进行图级的优化。图提供了计算全局概述，所以容易在图级发现和执行许多优化，且与硬件无关，这意味着任何后端目标都可应用计算图优化。ZOMI大佬将前端优化分成了<strong>真正面向图层的优化</strong>和<strong>传统的面向DAG图的优化</strong>，目前来说个人感觉其实界限没有那么明确。不确定大佬是不是想表达面向单个算子&#x2F;层的优化以及面向整个DAG图的优化，一个是<strong>局部视角</strong>，一个是<strong>全局视角</strong>。学习完前端优化之后，大佬解释了为什么这么划分呢，其实是分成了<strong>神经网络相关的优化以及代码&#x2F;计算层面的优化</strong>。</p>
 <ul>
 <li>节点级优化，比如 Zero-dim-tensor dlimination（零维度张量消除）、 Nop Elimination。</li>
 <li>块级优化，比如代数简化、常量折叠、算子融合。将多个算子变成一个块，变成一个子图的优化。</li>
 <li>数据流级优化，比如Common sub-exoression elimination、DEC。更像是 Low-level IR上的优化。<br><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1ne411w7n2?t=102.0">图片取自ZOMI大佬</a><img src="/assets/AIcompiler_frontend.png" alt="AIcompiler_frontend" width="700"></li>
 </ul>
-<!-- ## 图层 Graph IR -->
-
-<h2 id="真正的面向图层的优化"><a href="#真正的面向图层的优化" class="headerlink" title="真正的面向图层的优化"></a>真正的面向图层的优化</h2><h3 id="算子融合-OPFusion"><a href="#算子融合-OPFusion" class="headerlink" title="算子融合 OPFusion"></a>算子融合 OPFusion</h3><p><strong>算子融合的本质就是要”减少访存 + 减少调度 + 提高并行”。融合的深度和粒度往往直接决定了最终的推理性能。</strong></p>
+<h2 id="真正的面向图层的优化，神经网络相关的优化"><a href="#真正的面向图层的优化，神经网络相关的优化" class="headerlink" title="真正的面向图层的优化，神经网络相关的优化"></a>真正的面向图层的优化，神经网络相关的优化</h2><h3 id="算子融合-OPFusion"><a href="#算子融合-OPFusion" class="headerlink" title="算子融合 OPFusion"></a>算子融合 OPFusion</h3><p><strong>算子融合的本质就是要”减少访存 + 减少调度 + 提高并行”。融合的深度和粒度往往直接决定了最终的推理性能。</strong></p>
 <ol>
 <li>算子融合方式<ul>
 <li>水平融合，将输入相同，计算类型相同的算子融合为一个算子，在同一个kernel中执行。可减少访问输入数据的次数，提高并行度。</li>
@@ -245,7 +247,88 @@
   两种分配方案都有效的，但是左侧这个由很多的并行依赖。并不能真正意义上做到并行。右侧这个两条并线分别取做内存优化，可以更好的做并行操作。同时大佬还提到了左侧这个不能在两个NPU核上做。</li>
 </ul>
 <p><strong>在做内存分配时要尽量允许更多的并行，在DAG中去尝试找到一个最长的路径，根据这个最长路径去做inplace和co-share操作</strong></p>
-<h2 id="传统的面向DAG图的优化"><a href="#传统的面向DAG图的优化" class="headerlink" title="传统的面向DAG图的优化"></a>传统的面向DAG图的优化</h2><h3 id="常量折叠，公共子表达式消除，死代码消除，代数简化"><a href="#常量折叠，公共子表达式消除，死代码消除，代数简化" class="headerlink" title="常量折叠，公共子表达式消除，死代码消除，代数简化"></a>常量折叠，公共子表达式消除，死代码消除，代数简化</h3><h1 id="后端优化"><a href="#后端优化" class="headerlink" title="后端优化"></a>后端优化</h1><ul>
+<h2 id="传统的面向DAG图的优化，代码-计算层面的优化"><a href="#传统的面向DAG图的优化，代码-计算层面的优化" class="headerlink" title="传统的面向DAG图的优化，代码&#x2F;计算层面的优化"></a>传统的面向DAG图的优化，代码&#x2F;计算层面的优化</h2><h3 id="常量折叠"><a href="#常量折叠" class="headerlink" title="常量折叠"></a>常量折叠</h3><h4 id="传统编译器中的常量折叠、传播"><a href="#传统编译器中的常量折叠、传播" class="headerlink" title="传统编译器中的常量折叠、传播"></a>传统编译器中的常量折叠、传播</h4><p><strong>Constant folding，常量折叠，通过对编译时的常量或常量表达式进行计算来简化代码。</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">i = <span class="number">320</span>*<span class="number">200</span>*<span class="number">32</span>;</span><br></pre></td></tr></table></figure>
+<p>类似这样的常量表达式，在编译过程中编译器就把这个表达式的值算出来，从而在真正执行时减少内存读取（三次）以及指令相乘（两次）操作。</p>
+<figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">%a: load <span class="number">320</span></span><br><span class="line">%b: load <span class="number">200</span></span><br><span class="line">%x: <span class="keyword">mul</span> %a, %b</span><br><span class="line">%c: load <span class="number">32</span></span><br><span class="line">%y: <span class="keyword">mul</span> %x %c</span><br><span class="line"></span><br><span class="line">%a: load <span class="number">2048000</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>constant propagation，常量传播，通过将表达式中的常量替换为相关表达式或字面量，再使用常量折叠技术来简化代码。</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">def <span class="title">foo</span><span class="params">()</span>:</span></span><br><span class="line"><span class="function">    x =</span> <span class="number">14</span>;</span><br><span class="line">    y = <span class="number">7</span> - x / <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">return</span> y * (<span class="number">28</span> / x + <span class="number">2</span>);</span><br><span class="line"><span class="comment">// 在编译阶段编译器可以将x的值向下传播，</span></span><br><span class="line"><span class="comment">// 然后编译器可以将y的值提前算出来，然后再传播，</span></span><br><span class="line"><span class="comment">// 可以将return的值也算出来。类似如下</span></span><br><span class="line"><span class="function">def <span class="title">foo</span><span class="params">()</span>:</span></span><br><span class="line"><span class="function">    x =</span> <span class="number">14</span>;</span><br><span class="line">    y = <span class="number">7</span> - <span class="number">14</span> / <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">return</span> y * (<span class="number">28</span> / <span class="number">14</span> + <span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+
+<h4 id="AI编译器中的常量折叠"><a href="#AI编译器中的常量折叠" class="headerlink" title="AI编译器中的常量折叠"></a>AI编译器中的常量折叠</h4><p><strong>在AI编译器中，常量折叠是将计算图中可以预先确定输出值的节点替换成常量，并对计算图进行一些结构简化的操作。示例如下</strong></p>
+<ul>
+<li>AddN（与传统编译器中的常量折叠类似）<br>  对于形状大小相同的两个常量tensor，add的结果同样是一个常量。那么AI编译器就可以将其提前计算出来，不需要在真正执行过程中再给这个Add节点分配额外的存储资源，也不需要重复计算，可直接访问其结果。</li>
+<li>BN折叠<br>  这种情况说的是Conv之后接的BN，在编译过程中AI编译器会将BN合并进Conv中。BN的参数均值、方差、Gamma和Beta在推理过程中全部已知。此时就用常量传播+常量折叠将其参数合并进Conv的weight和bias中。<strong>需要注意的是与算子融合并不一样，我认为可以将其理解成算子融合的前一步，将BN折叠进Conv后再融合后续的类似ReLU进Conv。</strong></li>
+</ul>
+<p><strong>AI编译器中常量折叠方法</strong></p>
+<ol>
+<li>传统编译器中的常量折叠，找到输入节点均为常量的节点，提前计算该节点的值来完整替换该节点。</li>
+<li>常量折叠与数据形状shape有关系，通过计算图已有信息推断出形状结果，用来代替原来的节点。常量折叠不仅仅用来算数字，还经常用来提前算出张量的形状信息，这个方法可以叫形状上的常量折叠，比如concat在拼接的时候，输入的两个数据（举例）形状太小已知，那么就可以在编译阶段提前算出concat之后的shape，若两个数据也已知，就可以将其结果也计算出来。</li>
+<li>常量折叠与已知常量的代数化简有关。例如上面提到的BN折叠。<br>举例，TensorFlow常量折叠PASS的流程。<ol>
+<li>先处理shape、size、rank这三类运算节点，其输出都取决于输入tensor的形状，而与具体的输入取值无关，所以输出可提前计算出来。</li>
+<li>将上述三类运算节点的输出提前计算出，将节点替换为Const节点，方便后续常量折叠和替换。</li>
+<li>折叠计算图操作：基于常量折叠的规则，遍历计算图，不断地用常量节点替换计算图中节点，直到没有任何可以替换的节点为止。</li>
+<li>处理sum、prod、min、max、mean、any、all着几类运算节点，其共同点是都沿着输入tensor的维度做一定的计算。将符合一定条件的这类节点替换为Identity节点（占位符节点）。</li>
+</ol>
+</li>
+</ol>
+<p><strong>在具体实现过程中，更重要的是发现类似于BN折叠的规则。</strong></p>
+<h3 id="公共子表达式消除-CSE"><a href="#公共子表达式消除-CSE" class="headerlink" title="公共子表达式消除-CSE"></a>公共子表达式消除-CSE</h3><h4 id="传统编译器中的CSE，LLVM将其定义为一个PASS"><a href="#传统编译器中的CSE，LLVM将其定义为一个PASS" class="headerlink" title="传统编译器中的CSE，LLVM将其定义为一个PASS"></a>传统编译器中的CSE，LLVM将其定义为一个PASS</h4><p><strong>在执行这项优化过程中，编译器会视情况将多个相同的表达式替换成一个变量，该变量存储计算该表达式后所得的值。视情况的意思就是编译器会评估重复计算开销以及存储表达式结果开销。示例如下：</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a = b * c + g;</span><br><span class="line">d = b * c + e;</span><br><span class="line"><span class="comment">// 在编译过程中，编译器会将 b * c替换成一个变量</span></span><br><span class="line">temp = b * c;</span><br><span class="line">a = temp + g;</span><br><span class="line">d = temp + e;</span><br></pre></td></tr></table></figure>
+<p><strong>principle，基本原则：</strong>基于表达式的定义可达性。当以下条件成立时，一个表达式 b * c 在程序的某个点p被定义为可达的。</p>
+<ol>
+<li>从初始节点到点p的每条路径在到达p之前计算过 b * c；</li>
+<li>b * c 被计算后，不论b或者c到达p以前都没有被重新赋值过；<br>编译器开发者将公共子表达式消除分为两种：</li>
+</ol>
+<ul>
+<li>本地公共子表达式消除：工作在基本块之内（LLVM 中提到的BasicBlock概念）。</li>
+<li>全局公共子表达式消除：工作在整个过程之中。<br><strong>Algorithm</strong>，对于语句 %S : z &#x3D; x op y,若x op y在语句s之前可用，则：</li>
+</ul>
+<ol>
+<li>从s开始逆向搜索IR，找到举例s最近执行w &#x3D; x op y的语句</li>
+<li>建立临时变量 %u</li>
+<li>把步骤1中找到的语句 w &#x3D; x op y进行替换。<code>%u = x op y, %w = u</code></li>
+<li>使用z &#x3D; u替换s，重复步骤1知道遍历完IR。</li>
+</ol>
+<h4 id="AI编译器中的CSE"><a href="#AI编译器中的CSE" class="headerlink" title="AI编译器中的CSE"></a>AI编译器中的CSE</h4><p><strong>从传统编译器中搜索相同的子表达式，转变成了在计算图中搜索相同结构的子图。</strong><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1rv4y1Q7tp?t=324.1">图片取自ZOMI大佬</a><br><img src="/assets/AIcompiler_CSE.png" alt="AIcompiler_CSE" width="700"></p>
+<p><strong>具体实现，粗略说明。</strong>，通过遍历计算图，建立候选哈希表map，记录已处理过的同一种类型的OP。输入：计算图Graph IR（找到公共子表达式并优化计算图）。</p>
+<ol>
+<li>获取逆后续节点集Set：对计算图Graph IR进行深度优化遍历DFS，将结果逆转得到逆后续节点集（从某个节点出发，沿着计算图能够到达的节点的集合）。逆后续得到的结果是拓扑排序，即访问某一个节点时，该节点的依赖节点都已经被访问。</li>
+<li>创建Map：存储公共子表达式候选集，遍历Set时，可以从Map中查找是否由可使用的表达式。</li>
+<li>遍历计算图的所有节点，判断是否由公共子表达式：获取节点hash值，hash的key由输出个数+输出类型s+输入接待你id组成，key可以保证输入+输出个数+类型都相同时，得到的hash值相同。达到检索公共表达式的目的。</li>
+<li>记录入候选集Map中：根据hash值从Map中得到候选集，当候选集为空，即第一次遇到这样的表达式时将节点Node存入Map中。</li>
+<li>判断可复用的公共子表达式：候选集非空，说明之前遍历到了类似的表达式，进一步判断是否可复用已保存节点表达式的结果。节点的输入都是来自相同Const常量节点，可以保证输入数据完全相同；输出个数和类型相同，可以保证输出结果相同；满足条件即可复用之前保存的节点的结果。</li>
+<li>删除重复节点：判断表达式可以复用后，要将重复节点删除，但是主要要把上一个节点和下一个节点连起来，保证计算图的完整。</li>
+</ol>
+<h3 id="死代码消除-DEC"><a href="#死代码消除-DEC" class="headerlink" title="死代码消除-DEC"></a>死代码消除-DEC</h3><h4 id="传统编译器中死代码消除"><a href="#传统编译器中死代码消除" class="headerlink" title="传统编译器中死代码消除"></a>传统编译器中死代码消除</h4><p><strong>移除对程序执行结果没有任何影响的代码。死代码消除最普遍的做法，是通过预处理器来判断代码是否需要被编译，就是说通过代入一个数值来决定程序带是否该被编译。示例如下</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">foo</span><span class="params">(<span class="type">void</span>)</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> a = <span class="number">24</span>;</span><br><span class="line">    <span class="type">int</span> b = <span class="number">25</span>; <span class="comment">// return 之前用不到</span></span><br><span class="line">    <span class="type">int</span> c;</span><br><span class="line">    c = a &lt;&lt; <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">return</span> c; <span class="comment">// 这行之后的代码不会被执行</span></span><br><span class="line">    b = <span class="number">24</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>优点：</strong></p>
+<ul>
+<li>避免执行不必要的操作，提高运行效率，减小运行时间。</li>
+<li>节省不必要的资源分配优化空间。</li>
+<li>减小代码长度，增加可读性。</li>
+</ul>
+<h4 id="AI编译器中的死代码消除"><a href="#AI编译器中的死代码消除" class="headerlink" title="AI编译器中的死代码消除"></a>AI编译器中的死代码消除</h4><ul>
+<li>AI编译器中死代码消除可优化计算图的计算和存储效率，避免为死节点分配存储空间和进行计算。</li>
+<li>死代码在定义神经网络模型时通常不会存在，一般来说是其他图优化Pass造成的死代码。因此死代码消除Pass通常在其他的图优化Pass之后进行。</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1hD4y1h7nh?t=266.5">图片取自ZOMI大佬</a>。训练过程会产生很多额外的子图，推理时需删除。反向图也需删除，以及一些无用的控制流也会被删除。<br><img src="/assets/AIcompiler_DCE.png" alt="AIcompiler_DCE" width="700"></p>
+<p>Algorithm，粗略解释：</p>
+<ol>
+<li>获取逆后续节点集Set，对计算图 Graph IR进行深度优先遍历DFS，将结果逆转得到逆后续节点集。</li>
+<li>遍历逆后续节点集，判断是否为死节点：获取节点的输出值，判断是否为计算图的输出节点，若不是且无对应输出节点，则为死节点。</li>
+<li>删除死节点，重新遍历计算图：删除死节点，注意死节点删除后还需删除对应输入到死节点的边。然后重复步骤1。</li>
+</ol>
+<h3 id="代数简化-Algebraic-Reduced"><a href="#代数简化-Algebraic-Reduced" class="headerlink" title="代数简化 Algebraic Reduced"></a>代数简化 Algebraic Reduced</h3><h4 id="算术化简"><a href="#算术化简" class="headerlink" title="算术化简"></a>算术化简</h4><p><strong>利用交换律、结合律、提取公因式、分配律化简等规律调整计算图中算子的执行顺序，或者删除不必要的算子，以提高图整体的计算效率。</strong> 实现上的一个通用逻辑是通过子图替换方式实现。第一种方式就是抽象出一套通用的子图替换框架，在对各规则实例化。第二种方式是针对每一个规则实现专门的优化逻辑。重点是发现规则发现规律。<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1g24y1Q7qC?t=365.2">图片取自ZOMI大佬</a><br><img src="/assets/AIcompiler_代数化简.png" alt="AIcompiler_代数化简" width="700"></p>
+<h4 id="运行化简"><a href="#运行化简" class="headerlink" title="运行化简"></a>运行化简</h4><p><strong>减少运行时冗余的算子或算子对。</strong></p>
+<ul>
+<li>对合算子化简：就比如由连续两个转置、取反、倒数、逻辑非等操作，就可以将这两个算子化简掉。</li>
+<li>幂等算子化简：就比如连续的多个reshape，可以化简成一个reshape</li>
+</ul>
+<h4 id="广播化简（broadcast）"><a href="#广播化简（broadcast）" class="headerlink" title="广播化简（broadcast）"></a>广播化简（broadcast）</h4><p><strong>多个张量形状shape不同，需要进行广播将张量的形状拓展为相同shape再进行计算，化简为最小计算所需的广播运算数量。示例如下，</strong><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1g24y1Q7qC?t=500.2">图片取自ZOMI大佬</a><br><img src="/assets/AIcompiler_广播化简.png" alt="AIcompiler_广播化简" width="700"></p>
+<p>这张图简单的说明了使用位置替换实现广播化简，最小化广播次数。通过将S1和S2先相加，再进行broadcast拓展形状，用一次向量的相加替换了一次broadcast。最终计算图仍然是三次相加，但是只有一次broadcast了。</p>
+<h2 id="前端优化总结"><a href="#前端优化总结" class="headerlink" title="前端优化总结"></a>前端优化总结</h2><p>大致的一个前端优化Pass的排序，实际工程中也会有所不同。首先进行面向图层的优化，即神经网络相关的优化。<strong>算子融合 - - -&gt; 算子替换 - - -&gt; 布局转换 - - -&gt; 内存分配</strong>。然后进行面向DAG图的优化，即代码&#x2F;计算层面的优化。<strong>常量折叠 - - -&gt; 公共子表达式消除 - - -&gt; 死代码消除（死节点消除） - - -&gt; 代数简化</strong>。</p>
+<h1 id="后端优化"><a href="#后端优化" class="headerlink" title="后端优化"></a>后端优化</h1><ul>
 <li>特定硬件的优化，获取高性能的代码<ol>
 <li>将 Low-level IR 转换为 LLVM IR ，利用LLVM基础结构生成优化的CPU&#x2F;GPU代码</li>
 <li>对特定硬件做针对性的优化。</li>
@@ -258,7 +341,46 @@
 </li>
 <li>优化内核库，厂商特定的优化内核库。因为经过了一些特定的优化，可能会比编译器生成的算子效率更高。</li>
 </ul>
-<h1 id="AI编译器中比较难解决的问题"><a href="#AI编译器中比较难解决的问题" class="headerlink" title="AI编译器中比较难解决的问题"></a>AI编译器中比较难解决的问题</h1><ol>
+<h2 id="后端优化概念"><a href="#后端优化概念" class="headerlink" title="后端优化概念"></a>后端优化概念</h2><p>将计算图转换为低级的IR，关注算子节点内部的具体实现，针对具体硬件使其性能达到最佳。<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV17D4y177bP?t=242.5">图片取自ZOMI大佬</a><br><img src="/assets/AIcompiler_后端优化.png" alt="AIcompiler_后端优化" width="700"></p>
+<ol>
+<li>生成低级IR：不同AI编译器内部低级IR形式和定义不同，但是对于同一算子，算法的原理实质相同。对于具体的算子，需要用AI编译器底层的接口来定义算法，再由编译器来生成内部的低级IR。</li>
+<li>后端优化：针对不同的架构，不同算法的实现方式由不同的性能，后端优化的目的就是要找到算子的最优实现方式，达到最优性能。同一算子的不同形态都会有不同的循环优化方法。</li>
+<li>代码生成：对优化后的低级IR转换成更低级的IR，然后再转化为机器指令执行。非AI编译器核心内容。<br><strong>question</strong>后端优化为什么不直接用传统的通用编译器，如GCC、LLVM？</li>
+</ol>
+<ul>
+<li>深度学习中主要数据为张量，传统编译器不擅长对张量计算进行优化。</li>
+<li>通用编译器主要针对通用编程语言，缺少领域特定语言DSL支持，以及相关的优化。</li>
+</ul>
+<h3 id="算子分类"><a href="#算子分类" class="headerlink" title="算子分类"></a>算子分类</h3><p>判断依据：算子的FLOPS&#x2F;数据访问量大于还是小于1。</p>
+<ul>
+<li>访存密集型（操作简单，但需访问整个张量）：计算量相对较低，但需要频繁访问内存。性能瓶颈主要再内存带宽，而不是算力，这类算子通常需要考虑内存访问优化、数据复用、缓存优化。比如Element-wise型算子、只做数据搬运的算子、标准化算子等。</li>
+<li>计算密集型（操作复杂，计算量大）：计算量大，远远高于访问内存的量。性能瓶颈收硬件算力限制。这类算子通常要关注算力调度、向量化、并行化。比如卷积、矩阵乘、注意力等。</li>
+</ul>
+<h3 id="算子优化遇到的问题"><a href="#算子优化遇到的问题" class="headerlink" title="算子优化遇到的问题"></a>算子优化遇到的问题</h3><ol>
+<li>优化手段多样：再不同情况下权衡优化及其对应参数，对于优化专家来说也是相当耗费精力的。</li>
+<li>通用性与移植性：不同类型的硬件架构差异，使优化方法要考虑的因素也有很大不同。</li>
+<li>优化间相互影响：各种优化之间可能会相互制约，相互影响。这意味着最优的优化方法组合与序列是一个困难的组合优化问题，甚至是NP问题</li>
+</ol>
+<h3 id="算子库"><a href="#算子库" class="headerlink" title="算子库"></a>算子库</h3><p>针对两类算子进行优化，实现其逻辑不难，但要结合硬件能力达到高性能就比较难了，更不要说要达到极致的性能。业界最为常见的方式是将预置的算子实现封装成计算库。如CuDNN、CuBLAS、OpenBLAS、Eigen等优秀的计算库。</p>
+<p><strong>question</strong></p>
+<ol>
+<li>如何应对AI领域算子迭代更新快？<ul>
+<li>将算子按通用类别抽象，不去针对每个具体算子写优化。每一类的算子定义其行为规范、输入输出规则、可优化模式，若心酸子属于某类，则自动继承已有的优化逻辑。</li>
+<li>插件化的算子注册。新算子能以插件或注册表形式动态添加，经典算子可以在编译器中硬编码，也可以和新算子一样的方式。用户提供算子定义、验证逻辑等，编译器通过注册机制自动识别算子，并加入优化流程。</li>
+<li>DSL&#x2F;MLIR分层设计，用高级描述语言DSL或MLIR Dialect描述算子逻辑，优化和后端生成独立。<br> 这样做新算子只需要写IR逻辑，共享优化Pass。</li>
+</ul>
+</li>
+<li>如何解决统一算子在多平台移植后一致性的问题？<ul>
+<li>统一算子抽象+标准算法实现+精度规范+完整的测试验证</li>
+</ul>
+</li>
+<li>如何面对算子组合爆炸问题？如参数多样，融合大算子等。<ul>
+<li>模式化+启发式+搜索约束+模板化+自动调度</li>
+</ul>
+</li>
+</ol>
+<p>自动化生成，通过自动kernel生成的方式，对于给定算法自动生成目标平台上的高性能实现。自动化生成大致分为两个方向：1. AI编译器融合机器学习方法，Auto Tuning（TVM）。2. 算子计算加速用编译技术解决，Polyhedral。</p>
+<h2 id="算子执行与调度"><a href="#算子执行与调度" class="headerlink" title="算子执行与调度"></a>算子执行与调度</h2><h2 id="算子循环优化"><a href="#算子循环优化" class="headerlink" title="算子循环优化"></a>算子循环优化</h2><h2 id="Auto-Tuning"><a href="#Auto-Tuning" class="headerlink" title="Auto-Tuning"></a>Auto-Tuning</h2><h2 id="Polyhedral"><a href="#Polyhedral" class="headerlink" title="Polyhedral"></a>Polyhedral</h2><h1 id="AI编译器中比较难解决的问题"><a href="#AI编译器中比较难解决的问题" class="headerlink" title="AI编译器中比较难解决的问题"></a>AI编译器中比较难解决的问题</h1><ol>
 <li>动态shape问题<ul>
 <li>现阶段主流的AI编译器主要针对特定的静态shape输入完成编译优化，对于包含控制流的动态计算图提供的支持有限</li>
 <li>在NLP任务中，输入序列的长度是不固定的，会存在大量的动态shape需求。这时候需要前端将计算图改写为静态计算图，或者只优化适合编译器的部分。</li>
@@ -303,7 +425,7 @@
 </article>
 <div class="article-footer">
     <section id="license">
-      <div class="header"><span>License</span></div>
+      <div class="header"><span>许可协议</span></div>
       <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
 </div>
     </section>
@@ -311,10 +433,10 @@
 
 
     <section id="share">
-      <div class="header"><span>Share</span></div>
+      <div class="header"><span>分享文章</span></div>
       <div class="body">
         <div class="link"><input class="copy-area" readonly="true" id="copy-link" value="https://maskmask15.github.io/2025/09/25/AI%E7%BC%96%E8%AF%91%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%9501/" /></div>
-        <div class="social-wrap dis-select"><a class="social share-item wechat" onclick="util.toggle(&quot;qrcode-wechat&quot;)"><img  src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/b32ef3da1162a.svg" /></a><a class="social share-item weibo" target="_blank" rel="external nofollow noopener noreferrer" href="https://service.weibo.com/share/share.php?url=https://maskmask15.github.io/2025/09/25/AI%E7%BC%96%E8%AF%91%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%9501/&title=AI编译器学习记录 01 - LuYh&summary=AI编译器学习记录 01"><img  src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/80c07e4dbb303.svg" /></a><a class="social share-item email" href="mailto:?subject=AI编译器学习记录 01 - LuYh&amp;body=https://maskmask15.github.io/2025/09/25/AI%E7%BC%96%E8%AF%91%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%9501/"><img  src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/a1b00e20f425d.svg" /></a><a class="social share-item link" onclick="util.copy(&quot;copy-link&quot;, &quot;Copied!&quot;)"><img  src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/8411ed322ced6.svg" /></a></div>
+        <div class="social-wrap dis-select"><a class="social share-item wechat" onclick="util.toggle(&quot;qrcode-wechat&quot;)"><img  src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/b32ef3da1162a.svg" /></a><a class="social share-item weibo" target="_blank" rel="external nofollow noopener noreferrer" href="https://service.weibo.com/share/share.php?url=https://maskmask15.github.io/2025/09/25/AI%E7%BC%96%E8%AF%91%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%9501/&title=AI编译器学习记录 01 - LuYh&summary=AI编译器学习记录 01"><img  src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/80c07e4dbb303.svg" /></a><a class="social share-item email" href="mailto:?subject=AI编译器学习记录 01 - LuYh&amp;body=https://maskmask15.github.io/2025/09/25/AI%E7%BC%96%E8%AF%91%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%9501/"><img  src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/a1b00e20f425d.svg" /></a><a class="social share-item link" onclick="util.copy(&quot;copy-link&quot;, &quot;复制成功&quot;)"><img  src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/8411ed322ced6.svg" /></a></div>
         
         <div class="qrcode" id="qrcode-wechat" style="opacity:0;height:0">
           <img src="https://api.qrserver.com/v1/create-qr-code/?size=256x256&data=https://maskmask15.github.io/2025/09/25/AI%E7%BC%96%E8%AF%91%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%9501/"/>
@@ -324,7 +446,7 @@
     </section>
     </div>
 
-<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"></div><div class="item" id="next"><div class="note">Older</div><a href="/2025/09/24/LLVM%E5%AD%A6%E4%B9%A002/">LLVM 学习记录 0x</a></div></section></div>
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2025/09/24/LLVM%E5%AD%A6%E4%B9%A002/">LLVM 学习记录 0x</a></div></section></div>
 
 
 
@@ -338,7 +460,7 @@
 
 
 
-<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">On This Page</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#AI%E7%BC%96%E8%AF%91%E5%99%A8%E5%8F%91%E5%B1%95%E8%BF%87%E7%A8%8B"><span class="toc-text">AI编译器发展过程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#AI%E7%BC%96%E8%AF%91%E5%99%A8%E7%9A%84%E9%80%9A%E7%94%A8%E6%9E%B6%E6%9E%84"><span class="toc-text">AI编译器的通用架构</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#IR"><span class="toc-text">IR</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E7%AB%AF%E4%BC%98%E5%8C%96"><span class="toc-text">前端优化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9C%9F%E6%AD%A3%E7%9A%84%E9%9D%A2%E5%90%91%E5%9B%BE%E5%B1%82%E7%9A%84%E4%BC%98%E5%8C%96"><span class="toc-text">真正的面向图层的优化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E5%AD%90%E8%9E%8D%E5%90%88-OPFusion"><span class="toc-text">算子融合 OPFusion</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%83%E5%B1%80%E8%BD%AC%E6%8D%A2-Layout-Transform"><span class="toc-text">布局转换 Layout Transform</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%A0%E9%87%8F%E6%95%B0%E6%8D%AE%E5%B8%83%E5%B1%80"><span class="toc-text">张量数据布局</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#NCHW%E4%B8%8ENHWC"><span class="toc-text">NCHW与NHWC</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#AI%E7%BC%96%E8%AF%91%E5%B8%83%E5%B1%80%E8%BD%AC%E6%8D%A2%E4%BC%98%E5%8C%96"><span class="toc-text">AI编译布局转换优化</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D-%E4%BC%98%E5%8C%96"><span class="toc-text">内存分配&#x2F;优化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E5%88%92%E5%88%86"><span class="toc-text">内存划分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95%E3%80%82%EF%BC%88%E6%B2%A1%E6%9C%89%E6%8F%90%E5%88%B0%E6%9D%83%E9%87%8D%E5%A4%8D%E7%94%A8%EF%BC%8C%E8%BE%93%E5%85%A5%E5%A4%8D%E7%94%A8%EF%BC%8C%E8%BE%93%E5%87%BA%E5%A4%8D%E7%94%A8%EF%BC%8C%E5%8F%AF%E8%83%BD%E8%BF%99%E7%A7%8D%E6%9B%B4%E5%87%86%E7%A1%AE%E5%9C%B0%E8%AF%B4%E5%B1%9E%E4%BA%8E%E6%95%B0%E6%8D%AE%E5%A4%8D%E7%94%A8%EF%BC%8C%E6%95%B0%E6%8D%AE%E6%B5%81%E6%88%96%E8%80%85%E5%AD%98%E5%8F%96%E6%96%B9%E5%BC%8F%E4%B8%8A%E7%9A%84%E4%BC%98%E5%8C%96%EF%BC%89"><span class="toc-text">内存优化方法。（没有提到权重复用，输入复用，输出复用，可能这种更准确地说属于数据复用，数据流或者存取方式上的优化）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E5%A4%8D%E7%94%A8%EF%BC%88%E9%87%8D%E7%82%B9%EF%BC%89"><span class="toc-text">内存复用（重点）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%A0%E7%BB%9F%E7%9A%84%E9%9D%A2%E5%90%91DAG%E5%9B%BE%E7%9A%84%E4%BC%98%E5%8C%96"><span class="toc-text">传统的面向DAG图的优化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E9%87%8F%E6%8A%98%E5%8F%A0%EF%BC%8C%E5%85%AC%E5%85%B1%E5%AD%90%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%B6%88%E9%99%A4%EF%BC%8C%E6%AD%BB%E4%BB%A3%E7%A0%81%E6%B6%88%E9%99%A4%EF%BC%8C%E4%BB%A3%E6%95%B0%E7%AE%80%E5%8C%96"><span class="toc-text">常量折叠，公共子表达式消除，死代码消除，代数简化</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%90%8E%E7%AB%AF%E4%BC%98%E5%8C%96"><span class="toc-text">后端优化</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#AI%E7%BC%96%E8%AF%91%E5%99%A8%E4%B8%AD%E6%AF%94%E8%BE%83%E9%9A%BE%E8%A7%A3%E5%86%B3%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-text">AI编译器中比较难解决的问题</span></a></li></ol></div><div class="widget-footer"><a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/><path d="M7 3.338A9.95 9.95 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5"/></g></svg><span>Scroll to Top</span></a></div></widget>
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#AI%E7%BC%96%E8%AF%91%E5%99%A8%E5%8F%91%E5%B1%95%E8%BF%87%E7%A8%8B"><span class="toc-text">AI编译器发展过程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#AI%E7%BC%96%E8%AF%91%E5%99%A8%E7%9A%84%E9%80%9A%E7%94%A8%E6%9E%B6%E6%9E%84"><span class="toc-text">AI编译器的通用架构</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#IR"><span class="toc-text">IR</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BC%98%E5%8C%96%E5%8C%BA%E5%88%AB"><span class="toc-text">前后端优化区别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E7%AB%AF%E4%BC%98%E5%8C%96"><span class="toc-text">前端优化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9C%9F%E6%AD%A3%E7%9A%84%E9%9D%A2%E5%90%91%E5%9B%BE%E5%B1%82%E7%9A%84%E4%BC%98%E5%8C%96%EF%BC%8C%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3%E7%9A%84%E4%BC%98%E5%8C%96"><span class="toc-text">真正的面向图层的优化，神经网络相关的优化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E5%AD%90%E8%9E%8D%E5%90%88-OPFusion"><span class="toc-text">算子融合 OPFusion</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%83%E5%B1%80%E8%BD%AC%E6%8D%A2-Layout-Transform"><span class="toc-text">布局转换 Layout Transform</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%A0%E9%87%8F%E6%95%B0%E6%8D%AE%E5%B8%83%E5%B1%80"><span class="toc-text">张量数据布局</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#NCHW%E4%B8%8ENHWC"><span class="toc-text">NCHW与NHWC</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#AI%E7%BC%96%E8%AF%91%E5%B8%83%E5%B1%80%E8%BD%AC%E6%8D%A2%E4%BC%98%E5%8C%96"><span class="toc-text">AI编译布局转换优化</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D-%E4%BC%98%E5%8C%96"><span class="toc-text">内存分配&#x2F;优化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E5%88%92%E5%88%86"><span class="toc-text">内存划分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95%E3%80%82%EF%BC%88%E6%B2%A1%E6%9C%89%E6%8F%90%E5%88%B0%E6%9D%83%E9%87%8D%E5%A4%8D%E7%94%A8%EF%BC%8C%E8%BE%93%E5%85%A5%E5%A4%8D%E7%94%A8%EF%BC%8C%E8%BE%93%E5%87%BA%E5%A4%8D%E7%94%A8%EF%BC%8C%E5%8F%AF%E8%83%BD%E8%BF%99%E7%A7%8D%E6%9B%B4%E5%87%86%E7%A1%AE%E5%9C%B0%E8%AF%B4%E5%B1%9E%E4%BA%8E%E6%95%B0%E6%8D%AE%E5%A4%8D%E7%94%A8%EF%BC%8C%E6%95%B0%E6%8D%AE%E6%B5%81%E6%88%96%E8%80%85%E5%AD%98%E5%8F%96%E6%96%B9%E5%BC%8F%E4%B8%8A%E7%9A%84%E4%BC%98%E5%8C%96%EF%BC%89"><span class="toc-text">内存优化方法。（没有提到权重复用，输入复用，输出复用，可能这种更准确地说属于数据复用，数据流或者存取方式上的优化）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E5%A4%8D%E7%94%A8%EF%BC%88%E9%87%8D%E7%82%B9%EF%BC%89"><span class="toc-text">内存复用（重点）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%A0%E7%BB%9F%E7%9A%84%E9%9D%A2%E5%90%91DAG%E5%9B%BE%E7%9A%84%E4%BC%98%E5%8C%96%EF%BC%8C%E4%BB%A3%E7%A0%81-%E8%AE%A1%E7%AE%97%E5%B1%82%E9%9D%A2%E7%9A%84%E4%BC%98%E5%8C%96"><span class="toc-text">传统的面向DAG图的优化，代码&#x2F;计算层面的优化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E9%87%8F%E6%8A%98%E5%8F%A0"><span class="toc-text">常量折叠</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%A0%E7%BB%9F%E7%BC%96%E8%AF%91%E5%99%A8%E4%B8%AD%E7%9A%84%E5%B8%B8%E9%87%8F%E6%8A%98%E5%8F%A0%E3%80%81%E4%BC%A0%E6%92%AD"><span class="toc-text">传统编译器中的常量折叠、传播</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#AI%E7%BC%96%E8%AF%91%E5%99%A8%E4%B8%AD%E7%9A%84%E5%B8%B8%E9%87%8F%E6%8A%98%E5%8F%A0"><span class="toc-text">AI编译器中的常量折叠</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AC%E5%85%B1%E5%AD%90%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%B6%88%E9%99%A4-CSE"><span class="toc-text">公共子表达式消除-CSE</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%A0%E7%BB%9F%E7%BC%96%E8%AF%91%E5%99%A8%E4%B8%AD%E7%9A%84CSE%EF%BC%8CLLVM%E5%B0%86%E5%85%B6%E5%AE%9A%E4%B9%89%E4%B8%BA%E4%B8%80%E4%B8%AAPASS"><span class="toc-text">传统编译器中的CSE，LLVM将其定义为一个PASS</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#AI%E7%BC%96%E8%AF%91%E5%99%A8%E4%B8%AD%E7%9A%84CSE"><span class="toc-text">AI编译器中的CSE</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%BB%E4%BB%A3%E7%A0%81%E6%B6%88%E9%99%A4-DEC"><span class="toc-text">死代码消除-DEC</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%A0%E7%BB%9F%E7%BC%96%E8%AF%91%E5%99%A8%E4%B8%AD%E6%AD%BB%E4%BB%A3%E7%A0%81%E6%B6%88%E9%99%A4"><span class="toc-text">传统编译器中死代码消除</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#AI%E7%BC%96%E8%AF%91%E5%99%A8%E4%B8%AD%E7%9A%84%E6%AD%BB%E4%BB%A3%E7%A0%81%E6%B6%88%E9%99%A4"><span class="toc-text">AI编译器中的死代码消除</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E6%95%B0%E7%AE%80%E5%8C%96-Algebraic-Reduced"><span class="toc-text">代数简化 Algebraic Reduced</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%97%E6%9C%AF%E5%8C%96%E7%AE%80"><span class="toc-text">算术化简</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E5%8C%96%E7%AE%80"><span class="toc-text">运行化简</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B9%BF%E6%92%AD%E5%8C%96%E7%AE%80%EF%BC%88broadcast%EF%BC%89"><span class="toc-text">广播化简（broadcast）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E7%AB%AF%E4%BC%98%E5%8C%96%E6%80%BB%E7%BB%93"><span class="toc-text">前端优化总结</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%90%8E%E7%AB%AF%E4%BC%98%E5%8C%96"><span class="toc-text">后端优化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8E%E7%AB%AF%E4%BC%98%E5%8C%96%E6%A6%82%E5%BF%B5"><span class="toc-text">后端优化概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E5%AD%90%E5%88%86%E7%B1%BB"><span class="toc-text">算子分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E5%AD%90%E4%BC%98%E5%8C%96%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-text">算子优化遇到的问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E5%AD%90%E5%BA%93"><span class="toc-text">算子库</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%97%E5%AD%90%E6%89%A7%E8%A1%8C%E4%B8%8E%E8%B0%83%E5%BA%A6"><span class="toc-text">算子执行与调度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%97%E5%AD%90%E5%BE%AA%E7%8E%AF%E4%BC%98%E5%8C%96"><span class="toc-text">算子循环优化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Auto-Tuning"><span class="toc-text">Auto-Tuning</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Polyhedral"><span class="toc-text">Polyhedral</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#AI%E7%BC%96%E8%AF%91%E5%99%A8%E4%B8%AD%E6%AF%94%E8%BE%83%E9%9A%BE%E8%A7%A3%E5%86%B3%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-text">AI编译器中比较难解决的问题</span></a></li></ol></div><div class="widget-footer"><a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/><path d="M7 3.338A9.95 9.95 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5"/></g></svg><span>回到顶部</span></a></div></widget>
 </div></aside><div class='float-panel'>
   <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
@@ -354,10 +476,10 @@
   window.canonical = {"originalHost":null,"officialHosts":["localhost"],"encoded":""};
   const ctx = {
     date_suffix: {
-      just: `Just`,
-      min: `minutes ago`,
-      hour: `hours ago`,
-      day: `days ago`,
+      just: `刚刚`,
+      min: `分钟前`,
+      hour: `小时前`,
+      day: `天前`,
     },
     root : `/`,
     tag_plugins: {
@@ -782,9 +904,9 @@
     utils.dark.method.toggle.start();
 
     const messages = {
-      light: `Switched to Light Mode`,
-      dark: `Switched to Dark Mode`,
-      auto: `Switched to Auto Mode`,
+      light: `切换到浅色模式`,
+      dark: `切换到深色模式`,
+      auto: `切换到跟随系统配色`,
     }
     hud?.toast?.(messages[newTheme])
   }
